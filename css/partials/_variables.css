@@ -1,3 +1,4 @@
+
 html, body {
     margin: 0%;
     box-sizing: border-box;
@@ -7,15 +8,15 @@ html, body {
 
 :root {
     --primary-color: #4458dc;
-    --primary-color2: #854fee;
-    --title-color: #8a0909;
+    --primary-color2: #73855c;
+    --title-color: #5f5858;
     --text-color: #777777;  
     --border-color: #201f1f17;  
-    --gradient-color: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    --gradient-color: #000000;
     --shadow-color:  0px 10px 30px rgba(118, 85, 225, 0.3);
     --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
    
 
     /* font family variables. */ 
-    --roboto: 'Roboto';
+    /* --roboto: 'Roboto', cursive; */
 } 
