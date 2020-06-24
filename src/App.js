@@ -20,7 +20,7 @@ class App extends React.Component {
       ],
       home: {
         title: 'Keep coding',
-        subtitle: 'My Projects 2020',
+        subTitle: 'My Projects 2020',
         text: 'Check out my projects below'
       },
       about: {
