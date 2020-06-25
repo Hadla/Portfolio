@@ -24,10 +24,10 @@ class App extends React.Component {
         text: 'Check out my projects below'
       },
       about: {
-        text: 'About me'
+        title: 'About me'
       },
       contact: {
-        text: 'Let\'s talk!'
+        title: 'Let\'s talk!'
       }
     }
   }
