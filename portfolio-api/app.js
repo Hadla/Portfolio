@@ -11,37 +11,40 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Change later to only allow our server
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Change later to only allow our server
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
 });
 
 app.get('/api', (req, res, next) => {
-    res.send('API Status: Running')
+  res.send('API Status: Running');
 });
 
 app.post('/api/email', (req, res, next) => {
-    sendGrid.setApiKey('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');
-    const msg = {
-        to: 'hadla.bergman@gmail.com',
-        from: req.body.email,
-        subject: 'Website Contact',
-        text: req.body.message
-    }
+  sendGrid.setApiKey(process.env.SENDGRID_API_KEY);
+  const msg = {
+    to: 'hadla.bergman@gmail.com',
+    from: 'hadla.bergman@gmail.com',
+    subject: 'Website Contact',
+    text: 'hej',
+    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+  };
 
-    sendGrid.send(msg)
-        .then(result => {
-            res.status(200).json({
-                success: true
-            })
-        })
-        .catch(err => {
-            console.log('ERROR: ', err);
-            res.status(401).json({
-                success: false
-            })
-        });
+  //   req.body.message
+
+  sendGrid.send(msg);
+  // .then((result) => {
+  //   res.status(200).json({
+  //     success: true,
+  //   });
+  // })
+  // .catch((err) => {
+  //   console.log('error: ', err);
+  //   res.status(401).json({
+  //     success: false,
+  //   });
+  // });
 });
 
-app.listen(3030, '0.0.0.0');
+app.listen(30, '0.0.0.0');
